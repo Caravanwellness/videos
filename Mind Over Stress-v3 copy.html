@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mind Over Stress-v3</title>
+
+  <style>
+    @font-face {
+      font-family: 'FoundersGrotesk';
+      src: url('./fonts/TestFoundersGrotesk-Regular-BF66175e972ac1c.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'TiemposHeadline Semibold';
+      src: url('./fonts/TestTiemposFine-Semibold-BF66457a50f016a.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    :root {
+      --white: #fff;
+      --black: #000;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      color: var(--black);
+      font-family: 'FoundersGrotesk', sans-serif;
+      background-color: #fdfdfd;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 40px 20px 0;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 20px;
+    }
+
+    .logo-container img {
+      width: 160px;
+      height: auto;
+    }
+
+    .header h1 {
+      font-family: 'TiemposHeadline Semibold';
+      font-weight: normal;
+      font-size: 2.5em;
+      margin-top: 20px;
+    }
+
+    .section {
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 1000px;
+    }
+
+    .video-title {
+      font-weight: normal;
+      font-size: 1.8em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .video-description {
+      max-width: 600px;
+      font-size: 1.2em;
+      line-height: 1.6;
+      text-align: center;
+      margin: 0 auto 30px;
+      padding: 0 10px;
+    }
+
+    .featured-video {
+      max-width: 800px; 
+      margin: 0 auto;  
+    }
+    .featured-video .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; 
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      margin: 40px 0;
+    }
+
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .carousel-wrapper {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.5s ease-in-out;
+      scroll-behavior: smooth;
+      justify-content: flex-start; 
+      padding: 0 20px;
+    }
+
+    .carousel-item {
+      flex: 0 0 310px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      background-color: #fff;
+      transition: transform 0.3s;
+      margin-bottom: 16px;
+      overflow: hidden; 
+    }
+
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; 
+      overflow: hidden;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .carousel-title {
+      font-size: 20px;
+      text-align: center;
+      padding: 10px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      border: none;
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      z-index: 10;
+      transition: transform 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .carousel-btn:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .btn-prev {
+      left: 30px;
+    }
+
+    .btn-next {
+      right: 25px;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2em;
+      }
+
+      .logo-container img {
+        width: 100px;
+      }
+
+      .carousel-container {
+        padding: 0 10px;
+      }
+
+      .carousel-item {
+        flex: 0 0 70%;
+      }
+
+      .carousel-title {
+        font-size: 13px;
+        padding: 6px;
+      }
+      
+      .btn-prev {
+      left: 3px;
+      }
+
+      .btn-next {
+        right: 5px;
+      }
+
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo-container">
+      <img src="image/Healthee Lockup_Two Toned (4).png" alt="Healthee Logo" />
+    </div>
+    <h1>Mind Over Stress</h1>
+  </header>
+
+  <main class="section">
+    <div class="featured-video">
+      <div class="video-wrapper">
+        <iframe src="https://player.vimeo.com/video/1082733241?h=86fa2021da" allowfullscreen></iframe>
+        <!-- Nutrition For Anxiety And Stress -->
+      </div>
+    </div>
+
+    <h2 class="video-title">You May Also Like</h2>
+    <div class="carousel-container">
+      <div class="carousel-wrapper" id="carousel-1">
+
+        <div class="carousel-item">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/1082730330?h=b31052b550" allowfullscreen></iframe>
+            <!-- Meditation For Stress Relief -->
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/1082729773?h=1e01f017b9" allowfullscreen></iframe>
+            <!-- Meditation For Mental Focus -->
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/1082730599?h=505d8c74ec" allowfullscreen></iframe>
+            <!-- Meditation For Work Related Stress -->
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/1082728257?h=c8bda6683e" allowfullscreen></iframe>
+            <!-- How To Deal With Stress In The Moment-->
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/1082729466?h=5c06beaabd" allowfullscreen></iframe>
+            <!-- Meditation For Busy Moms -->
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/1082729575?h=faaa56305d" allowfullscreen></iframe>
+            <!-- Meditation For Chronic Pain Relief -->
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-btn btn-prev" onclick="moveCarousel(-1, 'carousel-1')">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M15 6L9 12L15 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="carousel-btn btn-next" onclick="moveCarousel(1, 'carousel-1')">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </main>
+
+  <script>
+    function moveCarousel(direction, carouselId) {
+      const carousel = document.getElementById(carouselId);
+      const scrollItems = 2; 
+      const itemWidth = (carousel.querySelector('.carousel-item').offsetWidth + 20) * scrollItems;
+      const maxScroll = carousel.scrollWidth - carousel.offsetWidth;
+
+      let currentTransform = getComputedStyle(carousel).transform;
+      let currentTranslateX = currentTransform !== 'none' ? parseFloat(currentTransform.split(',')[4]) : 0;
+
+      let newTranslateX = currentTranslateX - direction * itemWidth;
+      if (newTranslateX > 0) newTranslateX = 0;
+      if (Math.abs(newTranslateX) > maxScroll) newTranslateX = -maxScroll;
+
+      carousel.style.transform = `translateX(${newTranslateX}px)`;
+    }
+  </script>
+
+</body>
+</html>
